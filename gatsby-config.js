@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ankit Tiwari',
+    title: 'Ankit Tiwari - Full Stack Developer',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

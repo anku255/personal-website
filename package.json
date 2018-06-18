@@ -10,6 +10,7 @@
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-typography": "^1.7.19",
     "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7",
     "typography-theme-fairy-gates": "^0.15.11"
   },
   "keywords": [
