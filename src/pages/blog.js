@@ -11,13 +11,13 @@ const Blog = ({ data }) => {
       <h1 className="page-title">Blog</h1>
       <div className="blog-post-list">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.frontmatter.slug} className="post">
-            <Link to={`/blog/${node.frontmatter.path}`}>
+          <div key={node.fields.slug} className="post">
+            <Link to={`/blog/${node.fields.slug}`}>
               <h3 className="post-title">{node.frontmatter.title}</h3>
             </Link>
             <div className="divider" />
             <div className="date-wrap">
-              <Link to={`/blog/${node.frontmatter.slug}`}>
+              <Link to={`/blog/${node.fields.slug}`}>
                 <ClockIcon />
                 <div className="date">
                   {format(new Date(node.frontmatter.date), 'MMM DD, YYYY')}
@@ -47,8 +47,10 @@ export const pageQuery = graphql`
     {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
-            path
             title
             date
           }
