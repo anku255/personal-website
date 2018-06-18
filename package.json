@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "author": "Ankit Tiwari <ankitt255@gmail.com>",
   "dependencies": {
+    "date-fns": "^1.29.0",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-typography": "^1.7.19",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-remark": "^1.7.44",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "typography-theme-fairy-gates": "^0.15.11"
