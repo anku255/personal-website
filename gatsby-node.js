@@ -22,7 +22,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return new Promise((resolve, reject) => {
     graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: {regex : "\/posts/"} }
+      ) {
         edges {
           node {
             fields {

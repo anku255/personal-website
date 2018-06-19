@@ -6,14 +6,19 @@
   "dependencies": {
     "date-fns": "^1.29.0",
     "gatsby": "^1.9.247",
+    "gatsby-image": "^1.0.54",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
+    "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-plugin-typography": "^1.7.19",
+    "gatsby-remark-images": "^1.5.67",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
+    "gatsby-transformer-sharp": "^1.6.27",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "sharp": "^0.20.3",
     "typography-theme-fairy-gates": "^0.15.11"
   },
   "keywords": [
