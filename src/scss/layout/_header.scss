@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $header-bg-color;
+  background-color: $primary-accent;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,7 +60,7 @@
       font-weight: 300;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: $white;
+      color: $secondary-accent;
     }
 
     &:hover {
