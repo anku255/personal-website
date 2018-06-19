@@ -1,10 +1,10 @@
 //
 // Projects page styling
 //
-.projects-page{
-  .page-content{
+.projects-page {
+  .page-content {
     @extend %card;
-    @include media_query($mobile-breakpoint){
+    @include media_query($mobile-breakpoint) {
       animation: none;
       margin-bottom: 30px;
     }
@@ -12,13 +12,13 @@
     animation-fill-mode: both;
     margin-bottom: 40px;
 
-    p:last-of-type{
+    p:last-of-type {
       margin-bottom: 0;
     }
   }
 
-  .folio-items-wrap{
-    @include media_query($mobile-breakpoint){
+  .folio-items-wrap {
+    @include media_query($mobile-breakpoint) {
       animation: none;
       padding: 0 20px;
       max-width: 400px;
@@ -31,29 +31,29 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    .folio-item{
-      @include media_query($tablet-breakpoint){
+    .folio-item {
+      @include media_query($tablet-breakpoint) {
         flex-basis: 48%;
       }
-      @include media_query($mobile-breakpoint){
+      @include media_query($mobile-breakpoint) {
         flex-basis: 100%;
       }
       border: 1px solid #{darken($card-border-color, 10)};
       border-radius: 5px;
-      box-shadow: 0px 15px 30px -17px rgba(0,0,0,0.42);
+      box-shadow: 0px 15px 30px -17px rgba(0, 0, 0, 0.42);
       flex-basis: 30%;
       margin-bottom: 40px;
       position: relative;
       overflow: hidden;
 
-      .item-image{
+      .item-image {
         @extend %bg-image;
         width: 100%;
         height: 200px;
       }
 
-      .item-title-wrap{
-        @include media_query($tablet-breakpoint){
+      .item-title-wrap {
+        @include media_query($tablet-breakpoint) {
           position: relative;
           padding: 0;
           background-color: $off-white;
@@ -77,17 +77,17 @@
         left: 0;
         opacity: 0;
 
-        .item-title{
-          @include media_query($tablet-breakpoint){
+        .item-title {
+          @include media_query($tablet-breakpoint) {
             color: $bodycolor;
             font-size: ems(16px);
             line-height: 16px;
           }
-          @include media_query($mobile-breakpoint){
+          @include media_query($mobile-breakpoint) {
             font-size: ems(14px);
             line-height: 14px;
           }
-          color: $primary-accent;
+          color: $secondary-accent;
           font-size: ems(22px);
           line-height: 30px;
           font-weight: 400;
@@ -95,8 +95,8 @@
         }
       }
 
-      &:hover{
-        .item-title-wrap{
+      &:hover {
+        .item-title-wrap {
           opacity: 1;
         }
       }
