@@ -1,21 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import Socials from '../layouts/socials'
+import avatar from '../../public/static/avatar.png';
+import Socials from '../layouts/socials';
 
 const IndexPage = () => {
   return (
     <div className="front-page">
       <div className="card-wrap">
-        <div className="image-wrap">
-          <div className="mask">
-            <div
-              className="profile-image"
-              // style={{ backgroundImage: `url(${profileImage})` }}
-            >
-              {' '}
-            </div>
-          </div>
-        </div>
+        <img src={avatar} alt="Avatar" />
         <div className="content">
           <div className="inner">
             <h2>Ankit Tiwari</h2>
@@ -28,7 +20,7 @@ const IndexPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

@@ -1,8 +1,8 @@
 //
 // Homepage styling
 //
-.front-page{
-  @include media_query($mobile-breakpoint){
+.front-page {
+  @include media_query($mobile-breakpoint) {
     height: auto;
     margin-top: 110px;
     margin-bottom: 40px;
@@ -13,8 +13,8 @@
   justify-content: center;
   align-items: center;
 
-  .card-wrap{
-    @include media_query($mobile-breakpoint){
+  .card-wrap {
+    @include media_query($mobile-breakpoint) {
       flex-wrap: wrap;
     }
     @extend %card;
@@ -23,44 +23,9 @@
     justify-content: center;
     position: relative;
 
-    // Profile image diamond
-    .image-wrap{
-      @include media_query($mobile-breakpoint){
-        animation: none;
-        left: 0;
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      animation: portraitSlideLeft 0.8s 0.2s;
-      animation-fill-mode: both;
-      padding: 20px;
-      margin-right: 40px;
-      position: relative;
-      left: 15px;
-
-      .mask{
-        @include media_query($mobile-breakpoint){
-          transform: scale(0.8) rotate(45deg);
-        }
-        transform : rotate(45deg);
-        width: 150px;
-        height: 150px;
-        overflow: hidden;
-      }
-
-      .profile-image{
-        transform: rotate(-45deg);
-        @extend %bg-image;
-        background-size: 113%;
-        width: 290px;
-        height: 260px;
-        transform-origin: 43px 200px;; // Better centering of profile image
-      }
-    }
-
     // Text
-    .content{
-      @include media_query($mobile-breakpoint){
+    .content {
+      @include media_query($mobile-breakpoint) {
         animation: none;
       }
       animation: bioSlideRight 0.8s 0.2s;
@@ -68,29 +33,29 @@
       max-width: 440px;
       position: relative;
 
-      // David James
-      h2{
-        @include media_query($mobile-breakpoint){
+      // Name
+      h2 {
+        @include media_query($mobile-breakpoint) {
           font-size: 2.2rem;
         }
         font-size: 2.5rem;
         margin-bottom: 10px;
       }
 
-      // Front End Developer
-      h3{
+      // Description
+      h3 {
         color: $primary-accent;
       }
 
-      p:last-of-type{
+      p:last-of-type {
         margin-bottom: 0;
       }
     }
 
-    .Socials{
+    .Socials {
       margin-top: 15px;
 
-      .social-icons{
+      .social-icons {
         @extend %social-icons;
       }
     }
