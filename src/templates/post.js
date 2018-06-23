@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import ClockIcon from 'react-icons/lib/fa/clock-o';
 import Footer from '../layouts/footer';
+import Tags from '../Components/Tags';
 
 import format from 'date-fns/format';
 
@@ -13,6 +14,7 @@ const PostTemplate = ({ data }) => {
       <div className="post-card">
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <div className="divider" />
+        {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : null}
         <div className="date-wrap">
           <ClockIcon />
           <div className="date">
@@ -41,6 +43,7 @@ export const postQuery = graphql`
       frontmatter {
         title
         date
+        tags
       }
     }
   }
