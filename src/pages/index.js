@@ -1,6 +1,6 @@
 import React from 'react';
 
-import avatar from '../../public/static/avatar.png';
+import avatar from '../images/avatar.png';
 import Socials from '../layouts/socials';
 
 const IndexPage = () => {
