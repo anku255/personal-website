@@ -1,9 +1,12 @@
 import React from 'react';
 
 import PostCard from '../Components/PostCard';
+import Pagination from '../Components/Pagination';
 import Footer from '../layouts/footer';
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pathContext }) => {
+  const { page, pages, count } = pathContext;
+
   const {
     allMarkdownRemark: { edges: posts }
   } = data;
@@ -30,34 +33,13 @@ const Blog = ({ data }) => {
           )
         )}
       </div>
+      <Pagination page={page} pages={pages} count={count} />
       <Footer />
     </div>
   );
 };
 
 export default Blog;
-
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     allMarkdownRemark(
-//       filter: { fileAbsolutePath: { regex: "/posts/" } }
-//       sort: { fields: [frontmatter___date], order: DESC }
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             date
-//           }
-//           excerpt
-//         }
-//       }
-//     }
-//   }
-// `;
 
 export const BlogQuery = graphql`
   query BlogQuery($skip: Int!, $limit: Int!) {

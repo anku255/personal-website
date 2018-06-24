@@ -4,9 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Helper functions
 const paginationPath = (path, page, totalPages) => {
-  if (page === 0) {
-    return path;
-  } else if (page < 0 || page >= totalPages) {
+  if (page < 0 || page >= totalPages) {
     return '';
   } else {
     return `${path}/${page + 1}`;
@@ -113,20 +111,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 skip: index * blogPostsPerPaginatedPage,
                 // How many posts to show on this paginated page
                 limit: blogPostsPerPaginatedPage,
-                // How many paginated pages there are in total
-                paginatedPagesCount,
-                // The path to the previous paginated page (or an empty string)
-                prevPath: paginationPath(
-                  '/blog',
-                  index - 1,
-                  paginatedPagesCount
-                ),
-                // The path to the next paginated page (or an empty string)
-                nextPath: paginationPath(
-                  '/blog',
-                  index + 1,
-                  paginatedPagesCount
-                )
+                // How many pages there are in total
+                pages: paginatedPagesCount,
+                // Total number of blog posts
+                count: blogPostsCount,
+                // Current page no
+                page: index + 1
               }
             });
           });
