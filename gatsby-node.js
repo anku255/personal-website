@@ -2,6 +2,17 @@ const path = require('path');
 const _ = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+// Helper functions
+const paginationPath = (path, page, totalPages) => {
+  if (page === 0) {
+    return path;
+  } else if (page < 0 || page >= totalPages) {
+    return '';
+  } else {
+    return `${path}/${page + 1}`;
+  }
+};
+
 // Create slug for all posts
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
@@ -22,6 +33,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const postTemplate = path.resolve('src/templates/post.js');
   const tagTemplate = path.resolve('src/templates/tags.js');
   const projectTemplate = path.resolve('src/templates/project.js');
+  const blogPageTemplate = path.resolve('src/templates/blog.js');
 
   return new Promise((resolve, reject) => {
     graphql(`
@@ -40,6 +52,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     `)
+      // Create page for each blog post
       .then(res => {
         if (res.errors) {
           return reject(res.errors);
@@ -56,7 +69,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             }
           });
 
-          // Tag pages:
+          // Create page for each tag
+
           let tags = [];
           // Iterate through each post, putting all found tags into `tags`
           _.each(posts, edge => {
@@ -77,8 +91,48 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               }
             });
           });
+
+          // Create page for each blog page`blog/{pageno}`
+
+          const blogPostsCount = posts.length;
+          const blogPostsPerPaginatedPage = 5;
+          const paginatedPagesCount = Math.ceil(
+            blogPostsCount / blogPostsPerPaginatedPage
+          );
+
+          // Create each paginated page
+          _.times(paginatedPagesCount, index => {
+            createPage({
+              // Calculate the path for this page like `/blog`, `/blog/2`
+              path: paginationPath('/blog', index, paginatedPagesCount),
+              // Set the component as normal
+              component: blogPageTemplate,
+              // Pass the following context to the component
+              context: {
+                // Skip this number of posts from the beginning
+                skip: index * blogPostsPerPaginatedPage,
+                // How many posts to show on this paginated page
+                limit: blogPostsPerPaginatedPage,
+                // How many paginated pages there are in total
+                paginatedPagesCount,
+                // The path to the previous paginated page (or an empty string)
+                prevPath: paginationPath(
+                  '/blog',
+                  index - 1,
+                  paginatedPagesCount
+                ),
+                // The path to the next paginated page (or an empty string)
+                nextPath: paginationPath(
+                  '/blog',
+                  index + 1,
+                  paginatedPagesCount
+                )
+              }
+            });
+          });
         });
       })
+      // create page for each project
       .then(() => {
         graphql(`
           {
