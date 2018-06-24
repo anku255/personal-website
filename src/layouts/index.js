@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
-import '../scss/styles.scss'
+import '../scss/styles.scss';
 
 const ListLink = props => (
   <li>
@@ -11,17 +11,17 @@ const ListLink = props => (
       {props.children}
     </Link>
   </li>
-)
+);
 
 const Navigation = () => (
   <nav className="Navigation">
     <ul className="nav-list">
       <ListLink to="/">Home</ListLink>
       <ListLink to="/projects/">Projects</ListLink>
-      <ListLink to="/blog/">Blog</ListLink>
+      <ListLink to="/blog/1">Blog</ListLink>
     </ul>
   </nav>
-)
+);
 
 const Header = () => (
   <div className="Header">
@@ -31,7 +31,7 @@ const Header = () => (
     </Link>
     <Navigation />
   </div>
-)
+);
 
 const TemplateWrapper = ({ children, data }) => {
   return (
@@ -41,26 +41,26 @@ const TemplateWrapper = ({ children, data }) => {
         meta={[
           {
             name: 'description',
-            content: 'Ankit Tiwari - Full Stack Developer',
+            content: 'Ankit Tiwari - Full Stack Developer'
           },
           {
             name: 'keywords',
             content:
-              'Ankit Tiwari, India, Full Stack Developer, gatsbyjs, gatsby, blog, frontend, reactjs, react, css, scss, sass',
-          },
+              'Ankit Tiwari, India, Full Stack Developer, gatsbyjs, gatsby, blog, frontend, reactjs, react, css, scss, sass'
+          }
         ]}
       />
       <Header />
       <div className="content-container">{children()}</div>
     </div>
-  )
-}
+  );
+};
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -70,4 +70,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
