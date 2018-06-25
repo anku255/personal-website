@@ -34,7 +34,10 @@ export default Projects;
 // Pull the project page content from Wordpress
 export const projectsPageQuery = graphql`
   query projectsPageQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           frontmatter {
