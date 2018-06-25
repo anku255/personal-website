@@ -12,9 +12,8 @@ const IndexPage = () => {
           <div className="inner">
             <h2>Ankit Tiwari</h2>
             <h3>Full Stack Developer</h3>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-            numquam assumenda eligendi earum fuga quibusdam reprehenderit
-            eveniet incidunt, consequatur sed.
+            Passionate about anything programming related. Also interested in
+            Astronomy, Cricket and Android.
           </div>
           <Socials />
         </div>
