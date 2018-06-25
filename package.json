@@ -18,6 +18,7 @@
     "gatsby-transformer-sharp": "^1.6.27",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "remove-markdown": "^0.3.0",
     "sharp": "^0.20.3",
     "typography-theme-fairy-gates": "^0.15.11"
   },

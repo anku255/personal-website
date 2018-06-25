@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const removeMd = require('remove-markdown');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Helper functions
@@ -9,6 +10,12 @@ const paginationPath = (path, page, totalPages) => {
   } else {
     return `${path}/${page + 1}`;
   }
+};
+
+const getExcerpt = html => {
+  return removeMd(html)
+    .substr(0, 250)
+    .concat('[..]');
 };
 
 // Create slug for all posts
@@ -21,6 +28,11 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       node,
       name: 'slug',
       value: slug
+    });
+    createNodeField({
+      node,
+      name: 'excerpt',
+      value: getExcerpt(node.rawMarkdownBody)
     });
   }
 };

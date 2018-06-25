@@ -18,9 +18,8 @@ const Blog = ({ data, pathContext }) => {
         {posts.map(
           ({
             node: {
-              fields: { slug },
-              frontmatter: { title, date },
-              excerpt
+              fields: { slug, excerpt },
+              frontmatter: { title, date }
             }
           }) => (
             <PostCard
@@ -53,12 +52,12 @@ export const BlogQuery = graphql`
         node {
           fields {
             slug
+            excerpt
           }
           frontmatter {
             title
             date
           }
-          excerpt
         }
       }
     }
