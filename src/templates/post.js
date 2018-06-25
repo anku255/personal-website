@@ -25,7 +25,7 @@ const PostTemplate = ({ data }) => {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <Link to="/blog" className="back-to-blog">
+        <Link to="/blog/1" className="back-to-blog">
           Back to Blog
         </Link>
       </div>
