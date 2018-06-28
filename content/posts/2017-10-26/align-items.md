@@ -4,7 +4,7 @@ date: 2017-10-26
 tags: ['CSS']
 ---
 
-<p class="intro">In my <a href="https://anku255.github.io/blog/justify-content/">last post</a>, I discussed <code>justify-content</code>. Today, I will talk about the difference between <code>align-items</code> and <code>align-content</code>.</p>
+<p class="intro">In my <a href="https://anku.netlify.com/blog/justify-content">last post</a>, I discussed <code>justify-content</code>. Today, I will talk about the difference between <code>align-items</code> and <code>align-content</code>.</p>
 
 Below, I have some divs (flex-items) inside a container div (flex-container) in an HTML document. The CSS style is also given below.
 

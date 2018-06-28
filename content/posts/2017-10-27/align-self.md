@@ -73,7 +73,7 @@ I am going to use below code sample to explain the working of `align-self`.
   <figcaption>Output for starter code</figcaption>
 </figure>
 
-`align-self` is basically `align-item` which works for single flex-item. I have already discussed `align-item` <a href="https://anku255.github.io/blog/align-items/">here</a>. `align-self` aligns the particular flex-item with respect to the cross-axis. The possible values for `align-self` are `flex-start`, `flex-end`, `center`, `stretch`, and `baseline`. I am going to apply `align-self` on box 5. All the outputs are given below:
+`align-self` is basically `align-item` which works for single flex-item. I have already discussed `align-item` <a href="https://anku.netlify.com/blog/align-items">here</a>. `align-self` aligns the particular flex-item with respect to the cross-axis. The possible values for `align-self` are `flex-start`, `flex-end`, `center`, `stretch`, and `baseline`. I am going to apply `align-self` on box 5. All the outputs are given below:
 
 ```css
 .box5 {

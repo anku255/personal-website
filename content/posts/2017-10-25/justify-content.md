@@ -4,7 +4,7 @@ date: 2017-10-25
 tags: ['CSS']
 ---
 
-<p class="intro">In my <a href="https://anku255.github.io/blog/flexbox-wrapping/">last post</a>, I discussed about <code>flexbox-wrap</code> and <code>order</code>. Today, I will be talking about the role of <code>justify-content</code> in Flexbox.</p>
+<p class="intro">In my <a href="https://anku.netlify.com/blog/flexbox-wrapping/">last post</a>, I discussed about <code>flexbox-wrap</code> and <code>order</code>. Today, I will be talking about the role of <code>justify-content</code> in Flexbox.</p>
 
 I will be using below code sample to explain `justify-content`. I have 6 divs (flex-items) inside a container div (flex-container).
 
