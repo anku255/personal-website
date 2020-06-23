@@ -1,44 +1,50 @@
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
+
+// You can delete this file if you're not using it
 const path = require('path');
 const _ = require('lodash');
 const removeMd = require('remove-markdown');
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Helper functions
 const paginationPath = (path, page, totalPages) => {
   if (page < 0 || page >= totalPages) {
     return '';
-  } else {
-    return `${path}/${page + 1}`;
   }
+  return `${path}/${page + 1}`;
 };
 
-const getExcerpt = html => {
-  return removeMd(html)
+const getExcerpt = html =>
+  removeMd(html)
     .substr(0, 250)
     .concat('[..]');
-};
 
 // Create slug for all posts
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const filePath = createFilePath({ node, getNode });
     const slug = filePath.split('/')[2];
     createNodeField({
       node,
       name: 'slug',
-      value: slug
+      value: slug,
     });
     createNodeField({
       node,
       name: 'excerpt',
-      value: getExcerpt(node.rawMarkdownBody)
+      value: getExcerpt(node.rawMarkdownBody),
     });
   }
 };
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   const postTemplate = path.resolve('src/templates/post.js');
   const tagTemplate = path.resolve('src/templates/tags.js');
@@ -75,8 +81,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path: `blog/${node.fields.slug}`,
             component: postTemplate,
             context: {
-              slug: node.fields.slug
-            }
+              slug: node.fields.slug,
+            },
           });
 
           // Create page for each tag
@@ -97,8 +103,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path: `/tags/${_.kebabCase(tag)}/`,
               component: tagTemplate,
               context: {
-                tag
-              }
+                tag,
+              },
             });
           });
 
@@ -106,9 +112,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
           const blogPostsCount = posts.length;
           const blogPostsPerPaginatedPage = 5;
-          const paginatedPagesCount = Math.ceil(
-            blogPostsCount / blogPostsPerPaginatedPage
-          );
+          const paginatedPagesCount = Math.ceil(blogPostsCount / blogPostsPerPaginatedPage);
 
           // Create each paginated page
           _.times(paginatedPagesCount, index => {
@@ -128,8 +132,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 // Total number of blog posts
                 count: blogPostsCount,
                 // Current page no
-                page: index + 1
-              }
+                page: index + 1,
+              },
             });
           });
         });
@@ -138,9 +142,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       .then(() => {
         graphql(`
           {
-            allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/projects/" } }
-            ) {
+            allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
               edges {
                 node {
                   fields {
@@ -160,8 +162,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path: `project/${node.fields.slug}`,
               component: projectTemplate,
               context: {
-                slug: node.fields.slug
-              }
+                slug: node.fields.slug,
+              },
             });
           });
           resolve();

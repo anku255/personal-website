@@ -1,6 +1,8 @@
 import Typography from 'typography'
-import fairyGateTheme from 'typography-theme-fairy-gates'
+import altonTheme from 'typography-theme-alton'
 
-const typography = new Typography(fairyGateTheme)
+const typography = new Typography(altonTheme);
 
-module.exports = typography
+typography.injectStyles();
+
+export default typography;

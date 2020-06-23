@@ -1,31 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import Footer from '../layouts/footer';
+import { graphql } from 'gatsby';
+// import Link from 'gatsby-link';
+// import Footer from '../layouts/footer';
 
-const ProjectTemplate = ({ data }) => {
-  const {
-    markdownRemark: {
-      html,
-      frontmatter: { title, url }
-    }
-  } = data;
-
-  return (
-    <div className="single-post page-wrap">
-      <div className="post-card">
-        <h1 className="post-title">{title}</h1>
-        <div
-          className="post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        <Link to="/projects" className="back-to-blog">
-          Back to Projects
-        </Link>
-      </div>
-      <Footer />
-    </div>
-  );
-};
+const ProjectTemplate = ({ data }) => <div className="single-post page-wrap">{JSON.stringify(data, null, 2)}</div>;
 
 export default ProjectTemplate;
 
