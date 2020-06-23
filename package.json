@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "personal-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My personal portfolio website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ankit Tiwari <ankucodes@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "date-fns": "^2.11.1",
