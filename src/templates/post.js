@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { FaClock } from 'react-icons/fa';
 import format from 'date-fns/format';
 
-import Footer from '../components/Footer';
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import Tags from '../components/Tags';
+import Footer from '../Components/Footer';
+import SEO from '../Components/seo';
+import Layout from '../Components/layout';
+import Tags from '../Components/Tags';
 
 const Container = styled.div`
   background: ${props => props.theme.cBackground};

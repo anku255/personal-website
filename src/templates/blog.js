@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Footer from '../components/Footer';
-import ArrowLink from '../components/ArrowLink';
-import Pagination from '../components/Pagination';
-import PostCard from '../components/PostCard';
+import Layout from '../Components/layout';
+import SEO from '../Components/seo';
+import Footer from '../Components/Footer';
+import ArrowLink from '../Components/ArrowLink';
+import Pagination from '../Components/Pagination';
+import PostCard from '../Components/PostCard';
 
 const Container = styled.div`
   background: ${props => props.theme.cBackground};

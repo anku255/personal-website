@@ -2,12 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import ArrowLink from '../components/ArrowLink';
-import FlexGrid from '../components/FlexGrid';
-import Footer from '../components/Footer';
-import ProjectCard from '../components/ProjectCard';
+import Layout from '../Components/layout';
+import SEO from '../Components/seo';
+import ArrowLink from '../Components/ArrowLink';
+import FlexGrid from '../Components/FlexGrid';
+import Footer from '../Components/Footer';
+import ProjectCard from '../Components/ProjectCard';
 
 const Container = styled.div`
   background: ${props => props.theme.cBackground};

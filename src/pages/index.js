@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import ArrowLink from '../components/ArrowLink';
+import Layout from '../Components/layout';
+import SEO from '../Components/seo';
+import ArrowLink from '../Components/ArrowLink';
 import HeroImage from '../images/hero.png';
 
 const Container = styled.div`
