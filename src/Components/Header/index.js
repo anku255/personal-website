@@ -42,7 +42,7 @@ const Header = () => (
             </span>
             Projects
           </ListItem>
-          <ListItem to="/blog/">
+          <ListItem to="/blog/1">
             <span>
               <FaPencilAlt />
             </span>
