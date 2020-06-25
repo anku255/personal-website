@@ -100,7 +100,7 @@ Now, you will need to replace the `configuration` object in `.detoxrc.json` file
       }
     }
   }
-  ```
+```
 
 For me, it would look like the following -
 
