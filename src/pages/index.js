@@ -151,8 +151,7 @@ const IndexPage = () => (
           </h1>
 
           <h2 className="intro__tagline">
-            I'm <span className="name">Ankit Tiwari</span>, a software engineer building web and mobile applications
-            across various architectures in cloud and serverless environments.
+            I'm <span className="name">Ankit Tiwari</span>, a software engineer passionate about learning and building things. I love solving problems using my computer science skills.
           </h2>
 
           <h3 className="intro__contact">
