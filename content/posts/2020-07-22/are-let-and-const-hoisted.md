@@ -4,12 +4,12 @@ date: 2020-07-22
 tags: ['Javascript']
 ---
 
-<p class="intro">In this post I will be talking about hoisting, temporal dead zone and how hoisting works with let and const.</p>
+<p class="intro">In this post, I will be talking about hoisting, temporal dead zone, and how hoisting works with let and const.</p>
 
 
 ## What is hoisting? 
 
-The JavaScript engine before parses the code before executing and during the parsing phase it shifts all the **variable declaration** to the top of the scope. This behaviour of JS engine is called **hoisting**.
+The JavaScript engine before parses the code before executing and during the parsing phase it shifts all the **variable declaration** to the top of the scope. This behavior of the JS engine is called **hoisting**.
 
 ### Variable Hoisting 
 
@@ -42,7 +42,7 @@ function greeting() {
 }
 ```
 
-**Note:** The important distinction between **variable hoisting** and **function hoisting** is that a `var` variable is hoisted and then auto-initalized to `undefined` whereas a function declaration is hoisted and **initialized to its function value**. 
+**Note:** The important distinction between **variable hoisting** and **function hoisting** is that a `var` variable is hoisted and then auto-initialized to `undefined` whereas a function declaration is hoisted and **initialized to its function value**. 
 
 ### Function declaration vs Function expression
 
@@ -58,7 +58,7 @@ var greeting = function greeting() {
 };
 ```
 
-Above, we can see that the `greeting` variable was hoisted but it was not initialzed with the function reference. The engine throws us a `TypeError: greeting is not a function` and not `ReferenceError: greeting is not defined`. The function expression assignments behave very much like **variable hoisting**.
+Above, we can see that the `greeting` variable was hoisted but it was not initialized with the function reference. The engine throws us a `TypeError: greeting is not a function` and not `ReferenceError: greeting is not defined`. The function expression assignments behave very much like **variable hoisting**.
 
 
 ## What about let and const?
@@ -84,7 +84,7 @@ console.log(greeting); // undefined
 greeting = "Hello";
 ```
 
-Above, we can see that we are able to access `greeting` variable as soon as it was declared.
+Above, we can see that we are able to access the `greeting` variable as soon as it was declared.
 
 
 ## So, let and const are not hoisted?
