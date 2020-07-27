@@ -34,8 +34,7 @@ const StyledPost = styled.div`
   padding: 3.2rem 1.75rem;
 `;
 
-const StyledPostTitle = styled.h3`
-  font-size: 2.8rem;
+const StyledPostTitle = styled.h1`
   text-align: center;
 `;
 
@@ -67,7 +66,6 @@ const StyledDate = styled.div`
 
 const StyledPostContent = styled.div`
   font-size: 2.2rem;
-  line-height: 1.7;
 
   .intro {
     font-size: 2.4rem;
