@@ -159,7 +159,7 @@ const IndexPage = () => (
             <span className="emoji pointer"></span>
             <span>
               <a
-                href="mailto:brittany.chiang@gmail.com"
+                href="mailto:ankucodes@gmail.com"
                 rel="noopener noreferrer"
                 target="_blank"
                 className="highlight-link"
